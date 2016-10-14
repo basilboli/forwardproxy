@@ -4,6 +4,8 @@ Dockerized forward proxy.
 
 ``` make dockerize ```
 
-Example [basilboli/forwardproxy](https://github.com/basilboli/forwardproxy)
+docker push basilboli/forwardproxy
 
-Thanks to [elazarl/goproxy](https://github.com/elazarl/goproxy)
+Credits
+
+[elazarl/goproxy](https://github.com/elazarl/goproxy)

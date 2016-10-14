@@ -44,9 +44,15 @@ test:
 	@echo "--> testing..."
 	@go test -v $(PACKAGE)/...
 
+# Test your application
+deps:
+	@echo "--> resolving dependencies..."
+	@cd "src/$(PACKAGE)"
+	@godep save
+
 # Dockerize your application
 dockerize:
-	@echo "--> dockerizing..."
+	@echo "--> dockerizing..."	
 	@CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o $(BINARY_NAME) $(PACKAGE)|| ($(call print_error,Compilation error) && exit 1)
 	docker build -t $(IMAGE_NAME) -f Dockerfile.scratch .
 	@rm -f $(BINARY_NAME)
