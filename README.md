@@ -9,10 +9,12 @@
 ### How to use it 
 
 Dockerize you image 
+
 ``` make dockerize ```
 
 or use ready to go image 
-```docker push basilboli/forwardproxy```
+
+``` docker pull basilboli/forwardproxy ```
 
 ### Credits
 
