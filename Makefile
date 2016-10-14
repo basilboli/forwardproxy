@@ -44,12 +44,6 @@ test:
 	@echo "--> testing..."
 	@go test -v $(PACKAGE)/...
 
-# Test your application
-deps:
-	@echo "--> resolving dependencies..."
-	@cd "src/$(PACKAGE)"
-	@godep save
-
 # Dockerize your application
 dockerize:
 	@echo "--> dockerizing..."	

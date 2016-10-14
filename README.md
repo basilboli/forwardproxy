@@ -6,6 +6,12 @@ Dockerized forward proxy.
 
 docker push basilboli/forwardproxy
 
+
+Prerequisites 
+
+docker 
+godep
+
 Credits
 
 [elazarl/goproxy](https://github.com/elazarl/goproxy)
