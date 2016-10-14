@@ -44,8 +44,13 @@ test:
 	@echo "--> testing..."
 	@go test -v $(PACKAGE)/...
 
+resolve-deps:
+	@echo "--> resolving dependencies..."	
+	cd src/github.com/basilboli/forwardproxy; go get -v $(go list -e ./... | grep -v vendor) && go get -t $(go list -e ./... | grep -v vendor)
+	cd src/github.com/basilboli/forwardproxy; go test -v $(go list -e ./... | grep -v vendor)
+
 # Dockerize your application
-dockerize:
+dockerize: resolve-deps
 	@echo "--> dockerizing..."	
 	@CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o $(BINARY_NAME) $(PACKAGE)|| ($(call print_error,Compilation error) && exit 1)
 	docker build -t $(IMAGE_NAME) -f Dockerfile.scratch .
