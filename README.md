@@ -1,17 +1,19 @@
-# Forwardproxy-docker
+# forwardproxy
 
-Dockerized forward proxy.
+### Description
 
+- Ready to use dockerized forward proxy written in golang
+- Binds to 0.0.0.0:8080 (not secure! if exposed on machine without firewall)
+
+
+### How to use it 
+
+Dockerize you image 
 ``` make dockerize ```
 
-docker push basilboli/forwardproxy
+or use ready to go image 
+```docker push basilboli/forwardproxy```
 
-
-Prerequisites 
-
-docker 
-godep
-
-Credits
+### Credits
 
 [elazarl/goproxy](https://github.com/elazarl/goproxy)
